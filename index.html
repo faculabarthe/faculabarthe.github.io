@@ -949,76 +949,63 @@
 
 
       <form
-        class="contact-form reveal"
-        id="contactForm"
-      >
+  class="contact-form reveal"
+  id="contactForm"
+  action="https://formspree.io/f/myeyowop"
+  method="POST"
+>
 
-        <div class="form-row">
+  <div class="form-row">
 
-          <label>
+    <label>
+      <span>Tu nombre</span>
 
-            <span>
-              Tu nombre
-            </span>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        autocomplete="name"
+      />
+    </label>
 
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              autocomplete="name"
-            />
+    <label>
+      <span>Tu email</span>
 
-          </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        autocomplete="email"
+      />
+    </label>
 
+  </div>
 
-          <label>
+  <label>
+    <span>Tu mensaje...</span>
 
-            <span>
-              Tu email
-            </span>
+    <textarea
+      id="message"
+      name="message"
+      rows="6"
+      required
+    ></textarea>
+  </label>
 
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              autocomplete="email"
-            />
+  <button
+    class="btn btn-primary"
+    type="submit"
+  >
+    Enviar mensaje →
+  </button>
 
-          </label>
+  <small>
+    Te responderé a la brevedad.
+  </small>
 
-        </div>
-
-
-        <label>
-
-          <span>
-            Tu mensaje...
-          </span>
-
-          <textarea
-            id="message"
-            name="message"
-            rows="6"
-            required
-          ></textarea>
-
-        </label>
-
-
-        <button
-          class="btn btn-primary"
-          type="submit"
-        >
-          Enviar mensaje →
-        </button>
-
-        <small>
-          El botón abrirá tu aplicación de correo con el mensaje preparado.
-        </small>
-
-      </form>
+</form>
 
 
       <blockquote class="quote reveal">

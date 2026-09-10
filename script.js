@@ -124,49 +124,6 @@ if ('IntersectionObserver' in window) {
 }
 
 
-// ==============================
-// FORMULARIO DE CONTACTO
-// ==============================
-
-const contactForm = document.getElementById('contactForm');
-
-contactForm?.addEventListener('submit', event => {
-
-  event.preventDefault();
-
-  const name =
-    document.getElementById('name')?.value.trim();
-
-  const email =
-    document.getElementById('email')?.value.trim();
-
-  const message =
-    document.getElementById('message')?.value.trim();
-
-  if (!name || !email || !message) {
-    return;
-  }
-
-  const subject = encodeURIComponent(
-    `Contacto desde portfolio - ${name}`
-  );
-
-  const body = encodeURIComponent(
-`Hola Facundo,
-
-${message}
-
-Nombre: ${name}
-Email: ${email}`
-  );
-
-  const mailto =
-    `mailto:faculabarthe13@gmail.com?subject=${subject}&body=${body}`;
-
-  window.location.href = mailto;
-
-});
-
 
 // ==============================
 // GALERÍAS DE PROYECTOS
