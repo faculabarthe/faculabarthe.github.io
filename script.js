@@ -1,16 +1,28 @@
+// ==============================
+// MENÚ MOBILE
+// ==============================
+
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.getElementById('mainNav');
 const navLinks = [...document.querySelectorAll('.nav-link')];
 
 menuToggle?.addEventListener('click', () => {
-  const open = mainNav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(open));
+  const open = mainNav?.classList.toggle('open');
+
+  menuToggle.setAttribute(
+    'aria-expanded',
+    String(Boolean(open))
+  );
 });
 
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
-    mainNav.classList.remove('open');
-    menuToggle?.setAttribute('aria-expanded', 'false');
+    mainNav?.classList.remove('open');
+
+    menuToggle?.setAttribute(
+      'aria-expanded',
+      'false'
+    );
   });
 });
 
@@ -30,20 +42,48 @@ if (year) {
 // REVEAL AL HACER SCROLL
 // ==============================
 
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.12
-});
+const revealElements =
+  document.querySelectorAll('.reveal');
 
-document.querySelectorAll('.reveal').forEach(el => {
-  revealObserver.observe(el);
-});
+if ('IntersectionObserver' in window) {
+
+  const revealObserver =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              'visible'
+            );
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+  revealElements.forEach(element => {
+    revealObserver.observe(element);
+  });
+
+} else {
+
+  revealElements.forEach(element => {
+    element.classList.add('visible');
+  });
+
+}
 
 
 // ==============================
@@ -51,54 +91,109 @@ document.querySelectorAll('.reveal').forEach(el => {
 // ==============================
 
 const sections = [
-  ...document.querySelectorAll('main section[id]')
+  ...document.querySelectorAll(
+    'main section[id]'
+  )
 ];
 
-const sectionObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(link => {
-        link.classList.toggle(
-          'active',
-          link.getAttribute('href') === `#${entry.target.id}`
-        );
-      });
-    }
-  });
-}, {
-  rootMargin: '-40% 0px -50% 0px',
-  threshold: 0
-});
+if ('IntersectionObserver' in window) {
 
-sections.forEach(section => {
-  sectionObserver.observe(section);
-});
+  const sectionObserver =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          navLinks.forEach(link => {
+
+            const isActive =
+              link.getAttribute('href') ===
+              `#${entry.target.id}`;
+
+            link.classList.toggle(
+              'active',
+              isActive
+            );
+
+          });
+
+        });
+
+      },
+      {
+        rootMargin: '-40% 0px -50% 0px',
+        threshold: 0
+      }
+    );
+
+  sections.forEach(section => {
+    sectionObserver.observe(section);
+  });
+
+}
 
 
 // ==============================
 // FORMULARIO DE CONTACTO
 // ==============================
 
-const contactForm = document.getElementById('contactForm');
+const contactForm =
+  document.getElementById('contactForm');
 
-contactForm?.addEventListener('submit', event => {
-  event.preventDefault();
+contactForm?.addEventListener(
+  'submit',
+  event => {
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
+    event.preventDefault();
 
-  const subject = encodeURIComponent(
-    `Contacto desde portfolio - ${name}`
-  );
+    const name =
+      document
+        .getElementById('name')
+        ?.value
+        .trim();
 
-  const body = encodeURIComponent(
-    `Hola Facundo,\n\n${message}\n\nNombre: ${name}\nEmail: ${email}`
-  );
+    const email =
+      document
+        .getElementById('email')
+        ?.value
+        .trim();
 
-  window.location.href =
-    `mailto:faculabarthe13@gmail.com?subject=${subject}&body=${body}`;
-});
+    const message =
+      document
+        .getElementById('message')
+        ?.value
+        .trim();
+
+    if (!name || !email || !message) {
+      return;
+    }
+
+    const subject =
+      encodeURIComponent(
+        `Contacto desde portfolio - ${name}`
+      );
+
+    const body =
+      encodeURIComponent(
+`Hola Facundo,
+
+${message}
+
+Nombre: ${name}
+Email: ${email}`
+      );
+
+    const mailto =
+      `mailto:faculabarthe13@gmail.com?subject=${subject}&body=${body}`;
+
+    window.location.href = mailto;
+
+  }
+);
 
 
 // ==============================
@@ -108,46 +203,72 @@ contactForm?.addEventListener('submit', event => {
 const galleries = {
 
   // Lugares Full Stack
+
   lugares: [
+
     {
-      src: 'assets/lugares-dashboard.png',
+      src:
+        'assets/lugares-dashboard.png',
+
       caption:
         'Panel de gestión, creación de lugares e integración con Google Places'
     },
+
     {
-      src: 'assets/lugares-mis-lugares.png',
+      src:
+        'assets/lugares-mis-lugares.png',
+
       caption:
         'Mis lugares, favoritos, categorías y estadísticas'
     },
+
     {
-      src: 'assets/lugares-login.png',
+      src:
+        'assets/lugares-login.png',
+
       caption:
         'Inicio de sesión'
     }
+
   ],
 
+
   // Sistema de vuelos y pasajes
+
   vuelos: [
+
     {
-      src: 'assets/vuelos/vuelos-1.png',
+      src:
+        'assets/vuelos/vuelos-1.png',
+
       caption:
         'Listado general de vuelos disponibles'
     },
+
     {
-      src: 'assets/vuelos/vuelos-2.png',
+      src:
+        'assets/vuelos/vuelos-2.png',
+
       caption:
         'Búsqueda de vuelos por código IATA'
     },
+
     {
-      src: 'assets/vuelos/vuelos-3.png',
+      src:
+        'assets/vuelos/vuelos-3.png',
+
       caption:
         'Compra de pasaje y selección de equipaje'
     },
+
     {
-      src: 'assets/vuelos/vuelos-4.png',
+      src:
+        'assets/vuelos/vuelos-4.png',
+
       caption:
         'Registro de cliente ocasional'
     }
+
   ]
 
 };
@@ -158,28 +279,44 @@ const galleries = {
 // ==============================
 
 const galleryModal =
-  document.getElementById('galleryModal');
+  document.getElementById(
+    'galleryModal'
+  );
 
 const galleryImage =
-  document.getElementById('galleryImage');
+  document.getElementById(
+    'galleryImage'
+  );
 
 const galleryCaption =
-  document.getElementById('galleryCaption');
+  document.getElementById(
+    'galleryCaption'
+  );
 
 const galleryCounter =
-  document.getElementById('galleryCounter');
+  document.getElementById(
+    'galleryCounter'
+  );
 
 const galleryClose =
-  document.getElementById('galleryClose');
+  document.getElementById(
+    'galleryClose'
+  );
 
 const galleryPrev =
-  document.getElementById('galleryPrev');
+  document.getElementById(
+    'galleryPrev'
+  );
 
 const galleryNext =
-  document.getElementById('galleryNext');
+  document.getElementById(
+    'galleryNext'
+  );
 
 const galleryButtons =
-  document.querySelectorAll('[data-gallery]');
+  document.querySelectorAll(
+    '[data-gallery]'
+  );
 
 
 // ==============================
@@ -199,21 +336,34 @@ function renderGallery() {
   const galleryItems =
     galleries[currentGallery];
 
-  if (!galleryItems) return;
+  if (
+    !galleryItems ||
+    !galleryImage ||
+    !galleryCaption ||
+    !galleryCounter
+  ) {
+    return;
+  }
 
   const item =
     galleryItems[currentGalleryIndex];
 
-  if (!item) return;
+  if (!item) {
+    return;
+  }
 
-  galleryImage.src = item.src;
-  galleryImage.alt = item.caption;
+  galleryImage.src =
+    item.src;
+
+  galleryImage.alt =
+    item.caption;
 
   galleryCaption.textContent =
     item.caption;
 
   galleryCounter.textContent =
     `${currentGalleryIndex + 1} / ${galleryItems.length}`;
+
 }
 
 
@@ -221,16 +371,29 @@ function renderGallery() {
 // ABRIR GALERÍA
 // ==============================
 
-function openGallery(galleryName, index = 0) {
+function openGallery(
+  galleryName,
+  index = 0
+) {
 
-  if (!galleries[galleryName]) return;
+  if (
+    !galleryModal ||
+    !galleries[galleryName]
+  ) {
+    return;
+  }
 
-  currentGallery = galleryName;
-  currentGalleryIndex = index;
+  currentGallery =
+    galleryName;
+
+  currentGalleryIndex =
+    index;
 
   renderGallery();
 
-  galleryModal.classList.add('open');
+  galleryModal.classList.add(
+    'open'
+  );
 
   galleryModal.setAttribute(
     'aria-hidden',
@@ -240,6 +403,7 @@ function openGallery(galleryName, index = 0) {
   document.body.classList.add(
     'modal-open'
   );
+
 }
 
 
@@ -249,7 +413,13 @@ function openGallery(galleryName, index = 0) {
 
 function closeGallery() {
 
-  galleryModal.classList.remove('open');
+  if (!galleryModal) {
+    return;
+  }
+
+  galleryModal.classList.remove(
+    'open'
+  );
 
   galleryModal.setAttribute(
     'aria-hidden',
@@ -259,6 +429,7 @@ function closeGallery() {
   document.body.classList.remove(
     'modal-open'
   );
+
 }
 
 
@@ -271,16 +442,20 @@ function moveGallery(direction) {
   const galleryItems =
     galleries[currentGallery];
 
-  if (!galleryItems) return;
+  if (!galleryItems) {
+    return;
+  }
 
   currentGalleryIndex =
     (
       currentGalleryIndex +
       direction +
       galleryItems.length
-    ) % galleryItems.length;
+    ) %
+    galleryItems.length;
 
   renderGallery();
+
 }
 
 
@@ -290,17 +465,24 @@ function moveGallery(direction) {
 
 galleryButtons.forEach(button => {
 
-  button.addEventListener('click', () => {
+  button.addEventListener(
+    'click',
+    () => {
 
-    const galleryName =
-      button.dataset.gallery;
+      const galleryName =
+        button.dataset.gallery;
 
-    openGallery(
-      galleryName,
-      0
-    );
+      if (!galleryName) {
+        return;
+      }
 
-  });
+      openGallery(
+        galleryName,
+        0
+      );
+
+    }
+  );
 
 });
 
@@ -347,7 +529,10 @@ galleryModal?.addEventListener(
   'click',
   event => {
 
-    if (event.target === galleryModal) {
+    if (
+      event.target ===
+      galleryModal
+    ) {
       closeGallery();
     }
 
@@ -356,7 +541,7 @@ galleryModal?.addEventListener(
 
 
 // ==============================
-// TECLADO
+// CONTROLES CON TECLADO
 // ==============================
 
 document.addEventListener(
@@ -365,7 +550,9 @@ document.addEventListener(
 
     if (
       !galleryModal ||
-      !galleryModal.classList.contains('open')
+      !galleryModal
+        .classList
+        .contains('open')
     ) {
       return;
     }
