@@ -1,335 +1,1194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facundo Labarthe | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio de Facundo Labarthe, Desarrollador Full Stack Junior y estudiante de Analista en Tecnologías de la Información en Universidad ORT Uruguay."
+  />
+  <meta name="theme-color" content="#06110d" />
 
-    <!-- Bootstrap CSS (CDN) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Facundo Labarthe | Full Stack Junior</title>
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<!-- Fondo de TODO el portfolio (más notorio pero prolijo) -->
-<body style="background: linear-gradient(180deg, #dbeafe, #f8fafc);">
+<body>
 
-<!-- NAV -------------------------------------------------------------------------------->
-<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Facundo Labarthe</a>
+  <div class="noise" aria-hidden="true"></div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPortfolio"
-            aria-controls="navPortfolio" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="site-header">
+
+    <a class="brand" href="#inicio">
+      Facundo<span>Labarthe</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#inicio" class="nav-link active">Inicio</a>
+      <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+      <a href="#proyectos" class="nav-link">Proyectos</a>
+      <a href="#tecnologias" class="nav-link">Tecnologías</a>
+      <a href="#experiencia" class="nav-link">Experiencia</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </nav>
+
+    <a
+      class="btn btn-outline cv-header"
+      href="assets/CV-Facundo-Labarthe.pdf"
+      download
+    >
+      <span>↓</span>
+      Descargar CV
+    </a>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero section" id="inicio">
+
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-copy reveal">
+
+        <p class="eyebrow">
+          &lt; DESARROLLADOR FULL STACK JUNIOR /&gt;
+        </p>
+
+        <div class="hero-title-wrap">
+
+          <span class="terminal-arrow">&gt;</span>
+
+          <h1>
+            Facundo<br>
+            <span>Labarthe</span>
+          </h1>
+
+        </div>
+
+        <h2>
+          De los proyectos académicos a mi primera oportunidad como desarrollador.
+        </h2>
+
+        <p class="hero-description">
+          Estudiante de Analista en Tecnologías de la Información en Universidad ORT Uruguay,
+          con 13 de 17 materias aprobadas y un promedio académico de 90%.
+          He desarrollado proyectos Full Stack, Backend y Frontend utilizando React,
+          Node.js, .NET, Java y bases de datos.
+          Actualmente busco mi primera oportunidad laboral en tecnología.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#proyectos" class="btn btn-primary">
+            Ver mis proyectos <span>→</span>
+          </a>
+
+          <a href="#contacto" class="btn btn-outline">
+            ✉ Contactar
+          </a>
+
+        </div>
+
+        <div class="socials" aria-label="Redes">
+
+          <a
+            href="https://github.com/faculabarthe"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            GH
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/facundo-labarthe-samaloff-4b8339375"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            in
+          </a>
+
+          <a
+            href="mailto:faculabarthe13@gmail.com"
+            aria-label="Email"
+          >
+            @
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-visual reveal">
+
+        <div class="portrait-frame">
+
+          <div class="portrait-glow"></div>
+
+          <img
+            src="assets/facundo.jpg"
+            alt="Facundo Labarthe"
+            class="portrait"
+          />
+
+          <div class="portrait-scan"></div>
+
+        </div>
+
+        <div class="hero-comments">
+          // Aprender<br>
+          // Estudiar<br>
+          // Programar
+        </div>
+
+        <div class="code-card">
+
+          <div class="code-dots">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+
+<pre><code><span class="pink">const</span> <span class="purple">facundo</span> = {
+  estudiante: <span class="green">"ORT"</span>,
+  stack: [<span class="green">"React"</span>, <span class="green">"Node.js"</span>, <span class="green">".NET"</span>, <span class="green">"Java"</span>],
+  enfoque: <span class="green">"Aprender y mejorar"</span>,
+  ubicacion: <span class="green">"Montevideo"</span>,
+  objetivo: <span class="green">"Primera oportunidad IT"</span>
+};
+
+<span class="comment">// Cada proyecto es un paso.</span>
+<span class="comment">// Aprender. Programar. Mejorar. Repetir.</span></code></pre>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROYECTOS
+    ========================== -->
+
+    <section class="section projects-section" id="proyectos">
+
+      <div class="section-heading">
+
+        <div>
+
+          <p class="section-kicker">
+            PROYECTOS DESTACADOS
+          </p>
+
+          <h2>
+            Proyectos académicos
+          </h2>
+
+        </div>
+
+        <a
+          href="https://github.com/faculabarthe"
+          target="_blank"
+          rel="noopener"
+          class="text-link"
+        >
+          Ver GitHub →
+        </a>
+
+      </div>
+
+
+      <div class="projects-grid">
+
+        <!-- =====================
+             PROYECTO 01 - LUGARES
+        ====================== -->
+
+        <article class="project-card featured-project reveal">
+
+          <button
+            class="project-media project-media-image"
+            type="button"
+            data-gallery="lugares"
+            aria-label="Abrir galería de Lugares Full Stack"
+          >
+
+            <img
+              src="assets/lugares-dashboard.png"
+              alt="Panel de gestión del proyecto Lugares Full Stack"
+            />
+
+            <span class="gallery-badge">
+              3 capturas
+            </span>
+
+            <span class="media-overlay">
+              Ver galería
+            </span>
+
+          </button>
+
+
+          <div class="project-body">
+
+            <div class="project-topline">
+
+              <span class="project-index">
+                01
+              </span>
+
+              <span class="status-dot">
+                Proyecto principal
+              </span>
+
+            </div>
+
+
+            <h3>
+              Lugares Full Stack
+            </h3>
+
+
+            <p>
+              Aplicación web para descubrir bares, cafés y otros lugares de interés.
+              Incluye autenticación, roles de usuario, favoritos, creación de lugares,
+              filtros, categorías, dashboard e integración con Google Places.
+            </p>
+
+
+            <div class="tags">
+
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>MongoDB</span>
+
+            </div>
+
+
+            <div class="project-links">
+
+              <a
+                href="https://obligatorio2-frontend.vercel.app/login"
+                target="_blank"
+                rel="noopener"
+              >
+                Ver demo ↗
+              </a>
+
+              <a
+                href="https://github.com/faculabarthe/lugares-fullstack"
+                target="_blank"
+                rel="noopener"
+              >
+                Código ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================
+             PROYECTO 02 - GASTOS
+        ====================== -->
+
+        <article class="project-card reveal">
+
+          <div
+            class="project-media code-placeholder"
+            aria-label="Proyecto .NET sin capturas"
+          >
+
+<pre><code><span class="green">public</span> <span class="purple">class</span> PagoService
+{
+  <span class="green">API</span> + <span class="green">EF Core</span>
+  + SQL Server
+}</code></pre>
+
+            <span class="no-image-label">
+              Proyecto backend / MVC
+            </span>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-topline">
+
+              <span class="project-index">
+                02
+              </span>
+
+              <span class="status-dot">
+                C# / .NET
+              </span>
+
+            </div>
+
+
+            <h3>
+              Sistema de gestión de gastos y pagos
+            </h3>
+
+
+            <p>
+              Gestión de usuarios, equipos, tipos de gasto y pagos mediante
+              arquitectura por capas, Entity Framework, SQL Server, API REST,
+              autenticación y control de acceso por roles.
+            </p>
+
+
+            <div class="tags">
+
+              <span>C#</span>
+              <span>.NET 8</span>
+              <span>ASP.NET</span>
+              <span>SQL Server</span>
+
+            </div>
+
+
+            <div class="project-links">
+
+              <a
+                href="https://github.com/faculabarthe/gestion-gastos-pagos"
+                target="_blank"
+                rel="noopener"
+              >
+                Código ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================
+             PROYECTO 03 - BICICLETAS
+        ====================== -->
+
+        <article class="project-card reveal">
+
+          <div
+            class="project-media code-placeholder java-card"
+            aria-label="Proyecto Java sin capturas"
+          >
+
+<pre><code><span class="purple">class</span> Bicicleta {
+  Estado estado;
+  Lista alquileres;
+  Cola mantenimiento;
+}</code></pre>
+
+            <span class="no-image-label">
+              Java + estructuras de datos
+            </span>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-topline">
+
+              <span class="project-index">
+                03
+              </span>
+
+              <span class="status-dot">
+                Java / POO
+              </span>
+
+            </div>
+
+
+            <h3>
+              Sistema de gestión de bicicletas
+            </h3>
+
+
+            <p>
+              Sistema para administrar usuarios, estaciones, bicicletas y alquileres,
+              aplicando programación orientada a objetos, listas enlazadas, pilas,
+              colas y reglas de negocio.
+            </p>
+
+
+            <div class="tags">
+
+              <span>Java</span>
+              <span>POO</span>
+              <span>Estructuras de datos</span>
+              <span>Algoritmos</span>
+
+            </div>
+
+
+            <div class="project-links">
+
+              <a
+                href="https://github.com/faculabarthe/gestion-bicicletas"
+                target="_blank"
+                rel="noopener"
+              >
+                Código ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================
+             PROYECTO 04 - VUELOS
+        ====================== -->
+
+        <article class="project-card reveal">
+
+          <button
+            class="project-media project-media-image"
+            type="button"
+            data-gallery="vuelos"
+            aria-label="Abrir galería del sistema de gestión de vuelos y pasajes"
+          >
+
+            <img
+              src="assets/vuelos/vuelos-1.png"
+              alt="Sistema de gestión de vuelos y pasajes"
+            />
+
+            <span class="gallery-badge">
+              4 capturas
+            </span>
+
+            <span class="media-overlay">
+              Ver galería
+            </span>
+
+          </button>
+
+
+          <div class="project-body">
+
+            <div class="project-topline">
+
+              <span class="project-index">
+                04
+              </span>
+
+              <span class="status-dot">
+                C# / .NET
+              </span>
+
+            </div>
+
+
+            <h3>
+              Sistema de gestión de vuelos y pasajes
+            </h3>
+
+
+            <p>
+              Aplicación web para la gestión de vuelos, pasajes, usuarios,
+              aeropuertos, aviones y equipaje, aplicando programación
+              orientada a objetos y diferentes reglas de negocio.
+            </p>
+
+
+            <div class="tags">
+
+              <span>C#</span>
+              <span>.NET 8</span>
+              <span>ASP.NET</span>
+              <span>POO</span>
+
+            </div>
+
+
+            <div class="project-links">
+
+              <a
+                href="https://github.com/faculabarthe/gestion-vuelos-pasajes"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Código ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE MI / EXPERIENCIA
+    ========================== -->
+
+    <section class="section two-column" id="sobre-mi">
+
+      <div class="about reveal">
+
+        <p class="section-kicker">
+          SOBRE MÍ
+        </p>
+
+        <h2>
+          Más que código
+        </h2>
+
+        <p>
+          Me considero una persona responsable, constante y con ganas de seguir
+          aprendiendo. Me gusta entender cómo funcionan las cosas, resolver problemas
+          y trabajar en equipo. Vengo de experiencia laboral fuera del área de tecnología,
+          donde aprendí a cumplir objetivos, organizarme y adaptarme a distintas tareas.
+          Hoy quiero trasladar esa experiencia al desarrollo de software y seguir creciendo
+          dentro del sector IT.
+        </p>
+
+        <p>
+          He desarrollado proyectos académicos en equipo utilizando tecnologías frontend,
+          backend y bases de datos. Busco mi primera oportunidad laboral en tecnología para
+          aplicar lo aprendido, seguir creciendo y aportar dentro de un equipo de desarrollo.
+        </p>
+
+
+        <div class="values-grid">
+
+          <div>
+            <b>&lt;/&gt;</b>
+            <span>Adaptabilidad</span>
+          </div>
+
+          <div>
+            <b>◎</b>
+            <span>Responsabilidad</span>
+          </div>
+
+          <div>
+            <b>▥</b>
+            <span>Trabajo <br>en equipo</span>
+          </div>
+
+          <div>
+            <b>◇</b>
+            <span>Compromiso</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="side-info reveal">
+
+        <div class="info-block" id="experiencia">
+
+          <p class="section-kicker">
+            EXPERIENCIA
+          </p>
+
+
+          <div class="timeline">
+
+            <div class="timeline-item">
+
+              <span class="timeline-dot"></span>
+
+              <div>
+
+                <div class="timeline-head">
+
+                  <h3>
+                    Operario de depósito
+                  </h3>
+
+                  <time>
+                    2022 – Actualidad
+                  </time>
+
+                </div>
+
+                <p class="company">
+                  Farmared · Montevideo
+                </p>
+
+                <p>
+                  Picking, manejo de mercadería y operación de elevador.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+              <span class="timeline-dot"></span>
+
+              <div>
+
+                <div class="timeline-head">
+
+                  <h3>
+                    Encargado de depósito
+                  </h3>
+
+                  <time>
+                    2020 – 2022
+                  </time>
+
+                </div>
+
+                <p class="company">
+                  Tiendas Montevideo · Montevideo
+                </p>
+
+                <p>
+                  Organización del depósito, control de inventario y gestión
+                  de pedidos e ingresos de mercadería.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="education-card">
+
+          <p class="section-kicker">
+            EDUCACIÓN
+          </p>
+
+          <div class="education-inner">
+
+            <div class="ort-logo">
+              ORT
+            </div>
+
+            <div>
+
+              <h3>
+                Analista en Tecnologías de la Información
+              </h3>
+
+              <p>
+                Universidad ORT Uruguay
+              </p>
+
+              <small>
+                2024 – Actualidad · 13 de 17 materias aprobadas
+              </small>
+
+            </div>
+
+            <span class="average">
+              Promedio: 90%
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TECNOLOGÍAS
+    ========================== -->
+
+    <section class="section technologies" id="tecnologias">
+
+      <p class="section-kicker">
+        TECNOLOGÍAS
+      </p>
+
+      <h2>
+        Tecnologías y herramientas
+      </h2>
+
+
+      <div class="tech-grid reveal">
+
+        <span><b>HTML</b></span>
+        <span><b>CSS</b></span>
+        <span><b>JavaScript</b></span>
+        <span><b>React</b></span>
+        <span><b>Node.js</b></span>
+        <span><b>Express</b></span>
+        <span><b>Java</b></span>
+        <span><b>C#</b></span>
+        <span><b>.NET</b></span>
+        <span><b>SQL Server</b></span>
+        <span><b>MongoDB</b></span>
+        <span><b>Git</b></span>
+        <span><b>GitHub</b></span>
+        <span><b>Postman</b></span>
+        <span><b>REST APIs</b></span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FORMACIÓN
+    ========================== -->
+
+    <section class="section education-progress" id="formacion">
+
+      <p class="section-kicker">
+        FORMACIÓN
+      </p>
+
+      <h2>
+        Mi recorrido en ORT
+      </h2>
+
+
+      <div class="education-stats">
+
+        <div class="education-stat-card">
+
+          <div class="education-stat-icon">
+            🎓
+          </div>
+
+          <div>
+
+            <strong>
+              13 / 17
+            </strong>
+
+            <span>
+              Materias aprobadas
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="education-stat-card">
+
+          <div class="education-stat-icon">
+            📊
+          </div>
+
+          <div>
+
+            <strong>
+              90%
+            </strong>
+
+            <span>
+              Promedio académico
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="subjects">
+
+        <h3>
+          Materias aprobadas
+        </h3>
+
+
+        <div class="subjects-grid">
+
+          <div class="subject">
+            <span>✓</span>
+            Diseño de Interfaz Web
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Pensamiento Lógico
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Taller de Desarrollo para Dispositivos Móviles
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Programación 1
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Programación 2
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Taller de Ingeniería de Software
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Programación 3
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Bases de Datos 1
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Desarrollo Full Stack integrado con IA
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Bases de Datos 2
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Algoritmos y Estructuras de Datos
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Metodologías de Desarrollo Colaborativo
+          </div>
+
+          <div class="subject">
+            <span>✓</span>
+            Taller de Despliegue de Aplicaciones
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+
+    <section class="section contact" id="contacto">
+
+      <div class="contact-copy reveal">
+
+        <p class="section-kicker">
+          CONTACTO
+        </p>
+
+        <h2>
+          Hablemos
+        </h2>
+
+        <p>
+          Si tenés una oportunidad, propuesta o simplemente querés conectar,
+          no dudes en escribirme.
+        </p>
+
+
+        <ul class="contact-list">
+
+          <li>
+            <span>✉</span>
+            <a href="mailto:faculabarthe13@gmail.com">
+              faculabarthe13@gmail.com
+            </a>
+          </li>
+
+          <li>
+            <span>⌖</span>
+            Montevideo, Uruguay
+          </li>
+
+          <li>
+            <span>☎</span>
+            <a href="tel:+59893966189">
+              093 966 189
+            </a>
+          </li>
+
+          <li>
+
+            <span>in</span>
+
+            <a
+              href="https://www.linkedin.com/in/facundo-labarthe-samaloff-4b8339375"
+              target="_blank"
+              rel="noopener"
+            >
+              LinkedIn
+            </a>
+
+          </li>
+
+          <li>
+
+            <span>GH</span>
+
+            <a
+              href="https://github.com/faculabarthe"
+              target="_blank"
+              rel="noopener"
+            >
+              github.com/faculabarthe
+            </a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <form
+        class="contact-form reveal"
+        id="contactForm"
+      >
+
+        <div class="form-row">
+
+          <label>
+
+            <span>
+              Tu nombre
+            </span>
+
+            <input
+              type="text"
+              id="name"
+              required
+              autocomplete="name"
+            />
+
+          </label>
+
+
+          <label>
+
+            <span>
+              Tu email
+            </span>
+
+            <input
+              type="email"
+              id="email"
+              required
+              autocomplete="email"
+            />
+
+          </label>
+
+        </div>
+
+
+        <label>
+
+          <span>
+            Tu mensaje...
+          </span>
+
+          <textarea
+            id="message"
+            rows="6"
+            required
+          ></textarea>
+
+        </label>
+
+
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Enviar mensaje →
         </button>
 
-        <div class="collapse navbar-collapse" id="navPortfolio">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
-                <li class="nav-item"><a class="nav-link" href="#educacion">Educación</a></li>
-                <li class="nav-item"><a class="nav-link" href="#tecnologias">Tecnologías</a></li>
-                <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+        <small>
+          El botón abrirá tu aplicación de correo con el mensaje preparado.
+        </small>
 
-<main class="container py-5">
+      </form>
 
-    <!-- HEADER -------------------------------------------------------------------------------->
-    <header class="mb-4">
-        <!-- Fondo con degradado + texto blanco (más color) -->
-        <div class="p-4 p-md-5 rounded-4 shadow-sm text-center text-white"
-             style="background: linear-gradient(135deg, #0d6efd, #6610f2);">
 
-            <!-- FOTO + TITULOS -->
-            <div class="d-flex flex-column align-items-center">
-                <!-- FOTO -->
-                <img
-                    src="assets/img/imagen.jpg"
-                    alt="Foto de Facundo Labarthe"
-                    width="140"
-                    height="140"
-                    class="rounded-circle border border-3 border-light shadow mb-3"
-                    style="object-fit: cover;"
-                >
+      <blockquote class="quote reveal">
+        “Todavía estoy aprendiendo. Y eso es parte del camino.”
+      </blockquote>
 
-                <h1 class="display-5 fw-bold mb-2">Facundo Labarthe</h1>
-                <h2 class="h5 opacity-75 mb-3">Analista en Tecnologías de la Información</h2>
-            </div>
+    </section>
 
-            <p class="lead mb-2">
-                En búsqueda de mi primera experiencia laboral,
-                con interés en desarrollo web y sistemas.
-            </p>
+  </main>
 
-            <p class="opacity-75 mb-4">
-                Estudiante en ORT · HTML · CSS · JavaScript · C# · SQL Server
-            </p>
 
-            <div class="d-flex flex-wrap justify-content-center gap-2">
-                <a class="btn btn-light btn-lg fw-semibold" href="#contacto">Contactarme</a>
-                <a class="btn btn-outline-light btn-lg" href="#proyectos">Ver proyectos</a>
-                <a class="btn btn-outline-light btn-lg" href="https://www.linkedin.com/in/facundo-labarthe-samaloff-4b8339375" target="_blank" rel="noopener">
-                    LinkedIn
-                </a>
-            </div>
-        </div>
-    </header>
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-    <div class="row g-4">
+  <footer>
 
-        <!-- SOBRE MI -------------------------------------------------------------------------------->
-        <section class="col-12" id="sobre-mi">
-            <div class="card border-0 shadow-sm rounded-4">
-                <div class="card-body p-4 p-md-5">
-                    <h3 class="h4 fw-bold mb-3 text-primary">Sobre mí</h3>
-                    <p class="mb-0">
-                        Soy estudiante de Analista en Tecnología de la Información en ORT.
-                        Me interesa el desarrollo de aplicaciones web y sistemas,
-                        con foco en buenas prácticas y lógica de negocio.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <p>
+      © <span id="year"></span> Facundo Labarthe.
+      Todos los derechos reservados.
+    </p>
 
-        <!-- ESTUDIOS -------------------------------------------------------------------------------->
-        <section class="col-12" id="educacion">
-            <div class="card border-0 shadow-sm rounded-4">
-                <div class="card-body p-4 p-md-5">
-                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-2">
-                        <div>
-                            <h3 class="h4 fw-bold mb-2 text-primary">Educación</h3>
-                            <p class="mb-0">
-                                <strong>Analista en Tecnologías de la Información</strong> - ORT<br>
-                                <span class="text-muted">Inicio: 2024 · En curso</span>
-                            </p>
-                        </div>
 
-                        <div class="text-md-end">
-                            <span class="badge text-bg-success fs-6">Promedio: 89%</span>
-                        </div>
-                    </div>
+    <nav>
 
-                    <hr class="my-4">
+      <a href="#inicio">
+        Inicio
+      </a>
 
-                    <h4 class="h6 text-uppercase text-muted mb-3">Materias aprobadas</h4>
+      <a href="#sobre-mi">
+        Sobre mí
+      </a>
 
-                    <div class="row g-3">
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="border rounded-3 p-3 bg-white shadow-sm">
-                                <div class="fw-semibold">Diseño de Interfaz Web</div>
-                                <span class="badge text-bg-primary">84%</span>
-                            </div>
-                        </div>
+      <a href="#proyectos">
+        Proyectos
+      </a>
 
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="border rounded-3 p-3 bg-white shadow-sm">
-                                <div class="fw-semibold">Pensamiento Lógico</div>
-                                <span class="badge text-bg-primary">86%</span>
-                            </div>
-                        </div>
+      <a href="#tecnologias">
+        Tecnologías
+      </a>
 
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="border rounded-3 p-3 bg-white shadow-sm">
-                                <div class="fw-semibold">Programación 1</div>
-                                <span class="badge text-bg-success">95%</span>
-                            </div>
-                        </div>
+      <a href="#experiencia">
+        Experiencia
+      </a>
 
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="border rounded-3 p-3 bg-white shadow-sm">
-                                <div class="fw-semibold">Bases de Datos 1</div>
-                                <span class="badge text-bg-success">90%</span>
-                            </div>
-                        </div>
+      <a href="#contacto">
+        Contacto
+      </a>
 
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="border rounded-3 p-3 bg-white shadow-sm">
-                                <div class="fw-semibold">Metodologías de Desarrollo Colaborativo</div>
-                                <span class="badge text-bg-success">90%</span>
-                            </div>
-                        </div>
+    </nav>
 
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="border rounded-3 p-3 bg-white shadow-sm">
-                                <div class="fw-semibold">Programación 2</div>
-                                <span class="badge text-bg-success">94%</span>
-                            </div>
-                        </div>
 
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="border rounded-3 p-3 bg-white shadow-sm">
-                                <div class="fw-semibold">Algoritmos y Estructuras de Datos</div>
-                                <span class="badge text-bg-primary">89%</span>
-                            </div>
-                        </div>
+    <a
+      class="back-top"
+      href="#inicio"
+      aria-label="Volver arriba"
+    >
+      ↑
+    </a>
 
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="border rounded-3 p-3 bg-white shadow-sm">
-                                <div class="fw-semibold">Bases de Datos 2</div>
-                                <span class="badge text-bg-primary">87%</span>
-                            </div>
-                        </div>
+  </footer>
 
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="border rounded-3 p-3 bg-white shadow-sm">
-                                <div class="fw-semibold">Programación 3</div>
-                                <span class="badge text-bg-success">91%</span>
-                            </div>
-                        </div>
 
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="border rounded-3 p-3 bg-white shadow-sm">
-                                <div class="fw-semibold">Taller de Despliegue de Aplicaciones</div>
-                                <span class="badge text-bg-primary">86%</span>
-                            </div>
-                        </div>
+  <!-- =========================
+       MODAL GALERÍA
+       Sirve para Lugares y Vuelos
+  ========================== -->
 
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="border rounded-3 p-3 bg-white shadow-sm">
-                                <div class="fw-semibold">Taller de Desarrollo para Dispositivos Móviles</div>
-                                <span class="badge text-bg-primary">86%</span>
-                            </div>
-                        </div>
-                    </div>
+  <div
+    class="gallery-modal"
+    id="galleryModal"
+    aria-hidden="true"
+  >
 
-                </div>
-            </div>
-        </section>
+    <button
+      class="gallery-close"
+      id="galleryClose"
+      aria-label="Cerrar galería"
+    >
+      ×
+    </button>
 
-        <!-- TECNOLOGÍAS -------------------------------------------------------------------------------->
-        <section class="col-12" id="tecnologias">
-            <div class="card border-0 shadow-sm rounded-4">
-                <div class="card-body p-4 p-md-5">
-                    <h3 class="h4 fw-bold mb-3 text-primary">Tecnologías</h3>
 
-                    <div class="d-flex flex-wrap gap-2">
-                        <span class="badge text-bg-primary">HTML</span>
-                        <span class="badge text-bg-secondary">CSS</span>
-                        <span class="badge text-bg-warning text-dark">JavaScript</span>
-                        <span class="badge text-bg-info text-dark">C#</span>
-                        <span class="badge text-bg-success">SQL Server</span>
-                        <span class="badge text-bg-dark">Ionic</span>
-                        <span class="badge text-bg-dark">Git / GitHub</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <button
+      class="gallery-arrow gallery-prev"
+      id="galleryPrev"
+      aria-label="Imagen anterior"
+    >
+      ‹
+    </button>
 
-        <!-- PROYECTOS -------------------------------------------------------------------------------->
-        <section class="col-12" id="proyectos">
-            <div class="card border-0 shadow-sm rounded-4">
-                <div class="card-body p-4 p-md-5">
 
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <div>
-                            <span class="badge text-bg-warning text-dark mb-2">En desarrollo</span>
-                            <h3 class="h4 fw-bold mb-0 text-primary">Proyectos</h3>
-                        </div>
-                    </div>
+    <figure class="gallery-content">
 
-                    <p class="text-muted mb-4">
-                        Estoy construyendo mi primer proyecto personal: una <strong>tienda de ropa</strong>.
-                        Cuando tenga demo y repositorio, los agrego acá.
-                    </p>
+      <img
+        id="galleryImage"
+        src="assets/lugares-dashboard.png"
+        alt="Captura del proyecto"
+      />
 
-                    <div class="row g-3">
-                        <div class="col-12 col-md-8 col-lg-6">
-                            <div class="card h-100 rounded-4 border border-primary">
-                                <div class="card-body">
-                                    <h4 class="h6 fw-semibold">Tienda de Ropa (E-commerce)</h4>
 
-                                    <p class="text-muted small mb-3">
-                                        Catálogo de productos, página de detalle, carrito y diseño responsive.
-                                    </p>
+      <figcaption>
 
-                                    <div class="d-flex flex-wrap gap-2 mb-3">
-                                        <span class="badge text-bg-primary">HTML</span>
-                                        <span class="badge text-bg-secondary">CSS</span>
-                                        <span class="badge text-bg-warning text-dark">Bootstrap</span>
-                                        <span class="badge text-bg-warning text-dark">JavaScript</span>
-                                    </div>
+        <span id="galleryCaption">
+          Panel de gestión
+        </span>
 
-                                    <div class="d-flex gap-2">
-                                        <a class="btn btn-sm btn-outline-primary disabled" href="#" aria-disabled="true">Demo</a>
-                                        <a class="btn btn-sm btn-outline-primary disabled" href="#" aria-disabled="true">GitHub</a>
-                                    </div>
+        <small id="galleryCounter">
+          1 / 3
+        </small>
 
-                                    <div class="mt-3 small text-muted">
-                                        Estado: <span class="fw-semibold">en progreso</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      </figcaption>
 
-                </div>
-            </div>
-        </section>
+    </figure>
 
-        <!-- CONTACTO -------------------------------------------------------------------------------->
-        <section class="col-12" id="contacto">
-            <div class="card border-0 shadow-sm rounded-4">
-                <div class="card-body p-4 p-md-5">
-                    <h3 class="h4 fw-bold mb-3 text-primary">Contacto</h3>
 
-                    <div class="row g-3">
-                        <div class="col-12 col-md-6">
-                            <div class="border rounded-4 p-3 bg-white shadow-sm">
-                                <div class="text-muted small">Email</div>
-                                <a class="fw-semibold text-decoration-none link-primary" href="mailto:faculabarthe13@gmail.com">
-                                    faculabarthe13@gmail.com
-                                </a>
-                            </div>
-                        </div>
+    <button
+      class="gallery-arrow gallery-next"
+      id="galleryNext"
+      aria-label="Imagen siguiente"
+    >
+      ›
+    </button>
 
-                        <div class="col-12 col-md-6">
-                            <div class="border rounded-4 p-3 bg-white shadow-sm">
-                                <div class="text-muted small">WhatsApp</div>
-                                <a class="fw-semibold text-decoration-none link-success" href="https://wa.me/59893966189" target="_blank" rel="noopener">
-                                    Abrir chat
-                                </a>
-                            </div>
-                        </div>
+  </div>
 
-                        <div class="col-12 col-md-6">
-                            <div class="border rounded-4 p-3 bg-white shadow-sm">
-                                <div class="text-muted small">LinkedIn</div>
-                                <a class="fw-semibold text-decoration-none link-primary" href="https://www.linkedin.com/in/facundo-labarthe-samaloff-4b8339375" target="_blank" rel="noopener">
-                                    Ver perfil
-                                </a>
-                            </div>
-                        </div>
 
-                        <div class="col-12 col-md-6">
-                            <div class="border rounded-4 p-3 bg-white shadow-sm">
-                                <div class="text-muted small">CV</div>
-                                <a class="fw-semibold text-decoration-none link-dark" href="assets/cv-facundo-labarthe.pdf" download>
-                                    Descargar CV
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p class="text-muted small mt-3 mb-0"></p>
-                </div>
-            </div>
-        </section>
-
-    </div>
-</main>
-
-<!-- FOOTER -------------------------------------------------------------------------------->
-<footer class="py-4 bg-dark">
-    <div class="container text-center">
-        <p class="mb-0 text-light">© 2025 Facundo Labarthe</p>
-    </div>
-</footer>
-
-<!-- Bootstrap JS (CDN) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
