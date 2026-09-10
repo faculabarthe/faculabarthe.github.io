@@ -42,36 +42,27 @@ if (year) {
 // REVEAL AL HACER SCROLL
 // ==============================
 
-const revealElements =
-  document.querySelectorAll('.reveal');
+const revealElements = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
 
-  const revealObserver =
-    new IntersectionObserver(
-      entries => {
+  const revealObserver = new IntersectionObserver(
+    entries => {
 
-        entries.forEach(entry => {
+      entries.forEach(entry => {
 
-          if (entry.isIntersecting) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
 
-            entry.target.classList.add(
-              'visible'
-            );
+      });
 
-            revealObserver.unobserve(
-              entry.target
-            );
-
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.12
-      }
-    );
+    },
+    {
+      threshold: 0.12
+    }
+  );
 
   revealElements.forEach(element => {
     revealObserver.observe(element);
@@ -91,44 +82,40 @@ if ('IntersectionObserver' in window) {
 // ==============================
 
 const sections = [
-  ...document.querySelectorAll(
-    'main section[id]'
-  )
+  ...document.querySelectorAll('main section[id]')
 ];
 
 if ('IntersectionObserver' in window) {
 
-  const sectionObserver =
-    new IntersectionObserver(
-      entries => {
+  const sectionObserver = new IntersectionObserver(
+    entries => {
 
-        entries.forEach(entry => {
+      entries.forEach(entry => {
 
-          if (!entry.isIntersecting) {
-            return;
-          }
+        if (!entry.isIntersecting) {
+          return;
+        }
 
-          navLinks.forEach(link => {
+        navLinks.forEach(link => {
 
-            const isActive =
-              link.getAttribute('href') ===
-              `#${entry.target.id}`;
+          const isActive =
+            link.getAttribute('href') === `#${entry.target.id}`;
 
-            link.classList.toggle(
-              'active',
-              isActive
-            );
-
-          });
+          link.classList.toggle(
+            'active',
+            isActive
+          );
 
         });
 
-      },
-      {
-        rootMargin: '-40% 0px -50% 0px',
-        threshold: 0
-      }
-    );
+      });
+
+    },
+    {
+      rootMargin: '-40% 0px -50% 0px',
+      threshold: 0
+    }
+  );
 
   sections.forEach(section => {
     sectionObserver.observe(section);
@@ -141,59 +128,44 @@ if ('IntersectionObserver' in window) {
 // FORMULARIO DE CONTACTO
 // ==============================
 
-const contactForm =
-  document.getElementById('contactForm');
+const contactForm = document.getElementById('contactForm');
 
-contactForm?.addEventListener(
-  'submit',
-  event => {
+contactForm?.addEventListener('submit', event => {
 
-    event.preventDefault();
+  event.preventDefault();
 
-    const name =
-      document
-        .getElementById('name')
-        ?.value
-        .trim();
+  const name =
+    document.getElementById('name')?.value.trim();
 
-    const email =
-      document
-        .getElementById('email')
-        ?.value
-        .trim();
+  const email =
+    document.getElementById('email')?.value.trim();
 
-    const message =
-      document
-        .getElementById('message')
-        ?.value
-        .trim();
+  const message =
+    document.getElementById('message')?.value.trim();
 
-    if (!name || !email || !message) {
-      return;
-    }
+  if (!name || !email || !message) {
+    return;
+  }
 
-    const subject =
-      encodeURIComponent(
-        `Contacto desde portfolio - ${name}`
-      );
+  const subject = encodeURIComponent(
+    `Contacto desde portfolio - ${name}`
+  );
 
-    const body =
-      encodeURIComponent(
+  const body = encodeURIComponent(
 `Hola Facundo,
 
 ${message}
 
 Nombre: ${name}
 Email: ${email}`
-      );
+  );
 
-    const mailto =
-      `mailto:faculabarthe13@gmail.com?subject=${subject}&body=${body}`;
+  const mailto =
+    `mailto:faculabarthe13@gmail.com?subject=${subject}&body=${body}`;
 
-    window.location.href = mailto;
+  window.location.href = mailto;
 
-  }
-);
+});
 
 
 // ==============================
@@ -205,70 +177,46 @@ const galleries = {
   // Lugares Full Stack
 
   lugares: [
-
     {
-      src:
-        'assets/lugares-dashboard.png',
-
+      src: 'assets/lugares-dashboard.png',
       caption:
         'Panel de gestión, creación de lugares e integración con Google Places'
     },
-
     {
-      src:
-        'assets/lugares-mis-lugares.png',
-
+      src: 'assets/lugares-mis-lugares.png',
       caption:
         'Mis lugares, favoritos, categorías y estadísticas'
     },
-
     {
-      src:
-        'assets/lugares-login.png',
-
+      src: 'assets/lugares-login.png',
       caption:
         'Inicio de sesión'
     }
-
   ],
-
 
   // Sistema de vuelos y pasajes
 
   vuelos: [
-
     {
-      src:
-        'assets/vuelos/vuelos-1.png',
-
+      src: 'assets/vuelos/vuelos-1.png',
       caption:
         'Listado general de vuelos disponibles'
     },
-
     {
-      src:
-        'assets/vuelos/vuelos-2.png',
-
+      src: 'assets/vuelos/vuelos-2.png',
       caption:
         'Búsqueda de vuelos por código IATA'
     },
-
     {
-      src:
-        'assets/vuelos/vuelos-3.png',
-
+      src: 'assets/vuelos/vuelos-3.png',
       caption:
         'Compra de pasaje y selección de equipaje'
     },
-
     {
-      src:
-        'assets/vuelos/vuelos-4.png',
-
+      src: 'assets/vuelos/vuelos-4.png',
       caption:
         'Registro de cliente ocasional'
     }
-
   ]
 
 };
@@ -279,44 +227,28 @@ const galleries = {
 // ==============================
 
 const galleryModal =
-  document.getElementById(
-    'galleryModal'
-  );
+  document.getElementById('galleryModal');
 
 const galleryImage =
-  document.getElementById(
-    'galleryImage'
-  );
+  document.getElementById('galleryImage');
 
 const galleryCaption =
-  document.getElementById(
-    'galleryCaption'
-  );
+  document.getElementById('galleryCaption');
 
 const galleryCounter =
-  document.getElementById(
-    'galleryCounter'
-  );
+  document.getElementById('galleryCounter');
 
 const galleryClose =
-  document.getElementById(
-    'galleryClose'
-  );
+  document.getElementById('galleryClose');
 
 const galleryPrev =
-  document.getElementById(
-    'galleryPrev'
-  );
+  document.getElementById('galleryPrev');
 
 const galleryNext =
-  document.getElementById(
-    'galleryNext'
-  );
+  document.getElementById('galleryNext');
 
 const galleryButtons =
-  document.querySelectorAll(
-    '[data-gallery]'
-  );
+  document.querySelectorAll('[data-gallery]');
 
 
 // ==============================
@@ -352,18 +284,14 @@ function renderGallery() {
     return;
   }
 
-  galleryImage.src =
-    item.src;
-
-  galleryImage.alt =
-    item.caption;
+  galleryImage.src = item.src;
+  galleryImage.alt = item.caption;
 
   galleryCaption.textContent =
     item.caption;
 
   galleryCounter.textContent =
     `${currentGalleryIndex + 1} / ${galleryItems.length}`;
-
 }
 
 
@@ -371,10 +299,7 @@ function renderGallery() {
 // ABRIR GALERÍA
 // ==============================
 
-function openGallery(
-  galleryName,
-  index = 0
-) {
+function openGallery(galleryName, index = 0) {
 
   if (
     !galleryModal ||
@@ -383,17 +308,12 @@ function openGallery(
     return;
   }
 
-  currentGallery =
-    galleryName;
-
-  currentGalleryIndex =
-    index;
+  currentGallery = galleryName;
+  currentGalleryIndex = index;
 
   renderGallery();
 
-  galleryModal.classList.add(
-    'open'
-  );
+  galleryModal.classList.add('open');
 
   galleryModal.setAttribute(
     'aria-hidden',
@@ -403,7 +323,6 @@ function openGallery(
   document.body.classList.add(
     'modal-open'
   );
-
 }
 
 
@@ -417,9 +336,7 @@ function closeGallery() {
     return;
   }
 
-  galleryModal.classList.remove(
-    'open'
-  );
+  galleryModal.classList.remove('open');
 
   galleryModal.setAttribute(
     'aria-hidden',
@@ -429,7 +346,6 @@ function closeGallery() {
   document.body.classList.remove(
     'modal-open'
   );
-
 }
 
 
@@ -451,11 +367,9 @@ function moveGallery(direction) {
       currentGalleryIndex +
       direction +
       galleryItems.length
-    ) %
-    galleryItems.length;
+    ) % galleryItems.length;
 
   renderGallery();
-
 }
 
 
@@ -465,24 +379,21 @@ function moveGallery(direction) {
 
 galleryButtons.forEach(button => {
 
-  button.addEventListener(
-    'click',
-    () => {
+  button.addEventListener('click', () => {
 
-      const galleryName =
-        button.dataset.gallery;
+    const galleryName =
+      button.dataset.gallery;
 
-      if (!galleryName) {
-        return;
-      }
-
-      openGallery(
-        galleryName,
-        0
-      );
-
+    if (!galleryName) {
+      return;
     }
-  );
+
+    openGallery(
+      galleryName,
+      0
+    );
+
+  });
 
 });
 
@@ -529,10 +440,7 @@ galleryModal?.addEventListener(
   'click',
   event => {
 
-    if (
-      event.target ===
-      galleryModal
-    ) {
+    if (event.target === galleryModal) {
       closeGallery();
     }
 
@@ -550,9 +458,7 @@ document.addEventListener(
 
     if (
       !galleryModal ||
-      !galleryModal
-        .classList
-        .contains('open')
+      !galleryModal.classList.contains('open')
     ) {
       return;
     }
